@@ -16,8 +16,8 @@ templates_path = ['_templates']
 source_suffix = '.rst'
 master_doc = 'index'
 
-project = u'Flask-Excel'
-copyright = u'2015-2017 Onni Software Ltd.'
+project = 'Flask-Excel'
+copyright = '2015-2017 Onni Software Ltd.'
 version = '0.0.5'
 release = '0.0.5'
 exclude_patterns = []
@@ -38,7 +38,7 @@ latex_documents = [
 man_pages = [
     ('index', 'Flask-Excel',
      'Flask-Excel Documentation',
-     [u'Onni Software Ltd.'], 1)
+     ['Onni Software Ltd.'], 1)
 ]
 texinfo_documents = [
     ('index', 'Flask-Excel',

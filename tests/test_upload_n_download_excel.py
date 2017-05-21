@@ -29,11 +29,11 @@ class TestExcelResponse:
         ]
 
     def test_download(self):
-        for upload_file_type in FILE_TYPE_MIME_TABLE.keys():
+        for upload_file_type in list(FILE_TYPE_MIME_TABLE.keys()):
             file_name = 'issue15.test.%s' % upload_file_type
-            for download_file_type in FILE_TYPE_MIME_TABLE.keys():
-                print("Uploading %s Downloading %s" % (
-                    upload_file_type, download_file_type))
+            for download_file_type in list(FILE_TYPE_MIME_TABLE.keys()):
+                print(("Uploading %s Downloading %s" % (
+                    upload_file_type, download_file_type)))
                 io = pe.save_as(dest_file_type=upload_file_type,
                                 array=self.data)
                 if not PY2:
@@ -69,7 +69,7 @@ class TestExcelResponse:
         eq_(response.status_code, 400)
 
     def test_override_file_name(self):
-        for file_type in FILE_TYPE_MIME_TABLE.keys():
+        for file_type in list(FILE_TYPE_MIME_TABLE.keys()):
             file_name = 'override_file_name'
             response = self.app.post('/file_name/%s/%s' % (file_type,
                                                            file_name))

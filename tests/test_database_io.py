@@ -19,7 +19,7 @@ class TestSheet:
             with app.app_context():
                 db.drop_all()
                 db.create_all()
-            print("Uploading %s" % upload_file_type)
+            print(("Uploading %s" % upload_file_type))
             file_name = "test.%s" % upload_file_type
             io = pe.save_as(array=array, dest_file_type=upload_file_type)
             response = self.app.post('/upload/categories',
@@ -54,7 +54,7 @@ class TestBook(TestCase):
             with app.app_context():
                 db.drop_all()
                 db.create_all()
-            print("Uploading %s" % upload_file_type)
+            print(("Uploading %s" % upload_file_type))
             file_name = "test.%s" % upload_file_type
             io = pe.save_book_as(bookdict=data,
                                  dest_file_type=upload_file_type)

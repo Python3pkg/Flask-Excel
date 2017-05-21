@@ -17,22 +17,22 @@ class TestSheet:
     def test_array(self):
         test_sample = {
             "array": {
-                u'result': [[u'X', u'Y', u'Z'],
+                'result': [['X', 'Y', 'Z'],
                             [1.0, 2.0, 3.0],
                             [4.0, 5.0, 6.0]]},
             "dict": {
-                u'result': {
-                    u'Y': [2.0, 5.0],
-                    u'X': [1.0, 4.0],
-                    u'Z': [3.0, 6.0]
+                'result': {
+                    'Y': [2.0, 5.0],
+                    'X': [1.0, 4.0],
+                    'Z': [3.0, 6.0]
                 }},
             "records": {
-                u'result': [
-                    {u'Y': 2.0, u'X': 1.0, u'Z': 3.0},
-                    {u'Y': 5.0, u'X': 4.0, u'Z': 6.0}
+                'result': [
+                    {'Y': 2.0, 'X': 1.0, 'Z': 3.0},
+                    {'Y': 5.0, 'X': 4.0, 'Z': 6.0}
                 ]}
         }
-        for struct_type in test_sample.keys():
+        for struct_type in list(test_sample.keys()):
             io = BytesIO()
             sheet = pe.Sheet(self.data)
             sheet.save_to_memory('xls', io)
@@ -55,19 +55,19 @@ class TestBook:
         self.content.update(
             {"Sheet2": [[4, 4, 4, 4], [5, 5, 5, 5], [6, 6, 6, 6]]})
         self.content.update(
-            {"Sheet3": [[u'X', u'Y', u'Z'], [1, 4, 7], [2, 5, 8], [3, 6, 9]]})
+            {"Sheet3": [['X', 'Y', 'Z'], [1, 4, 7], [2, 5, 8], [3, 6, 9]]})
 
     def test_book(self):
         test_sample = ["book", "book_dict"]
         expected = {
-            u'result': {
-                u'Sheet1': [[1.0, 1.0, 1.0, 1.0],
+            'result': {
+                'Sheet1': [[1.0, 1.0, 1.0, 1.0],
                             [2.0, 2.0, 2.0, 2.0],
                             [3.0, 3.0, 3.0, 3.0]],
-                u'Sheet3': [[u'X', u'Y', u'Z'],
+                'Sheet3': [['X', 'Y', 'Z'],
                             [1.0, 4.0, 7.0], [2.0, 5.0, 8.0],
                             [3.0, 6.0, 9.0]],
-                u'Sheet2': [[4.0, 4.0, 4.0, 4.0],
+                'Sheet2': [[4.0, 4.0, 4.0, 4.0],
                             [5.0, 5.0, 5.0, 5.0],
                             [6.0, 6.0, 6.0, 6.0]]}}
         for struct_type in test_sample:

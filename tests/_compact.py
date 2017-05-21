@@ -7,6 +7,6 @@ else:
     from collections import OrderedDict
     
 if PY2:
-    from StringIO import StringIO as BytesIO
+    from io import StringIO as BytesIO
 else:
     from io import BytesIO

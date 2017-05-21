@@ -16,7 +16,7 @@ class TestSheet:
 
     def test_array(self):
         for struct_type in ["array", "dict", "records"]:
-            print("Testing %s" % struct_type)
+            print(("Testing %s" % struct_type))
             io = pe.save_as(dest_file_type="xls", array=self.data)
             io.seek(0)
             response = self.app.post('/exchange/%s' % struct_type,
@@ -40,7 +40,7 @@ class TestBook:
         self.content.update({
             "Sheet2": [[4, 4, 4, 4], [5, 5, 5, 5], [6, 6, 6, 6]]})
         self.content.update({
-            "Sheet3": [[u'X', u'Y', u'Z'], [1, 4, 7], [2, 5, 8], [3, 6, 9]]})
+            "Sheet3": [['X', 'Y', 'Z'], [1, 4, 7], [2, 5, 8], [3, 6, 9]]})
 
     def test_book(self):
         for struct_type in ["book", "book_dict"]:
